@@ -6,5 +6,4 @@ function Header() {
         <img alt="Логотип" src={logo} />
         )
 }
-
 export default Header;
