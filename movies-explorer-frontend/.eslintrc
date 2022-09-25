@@ -1,0 +1,14 @@
+{
+  "extends": ["airbnb-base",
+  "prettier", "airbnb", "airbnb/hooks"],
+  "rules": {
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [
+          "_id"
+        ]
+      }
+    ]
+  }
+}
