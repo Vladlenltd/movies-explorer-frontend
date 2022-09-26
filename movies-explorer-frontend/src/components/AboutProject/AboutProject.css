@@ -2,7 +2,7 @@
     padding: 70px 110px;
 }
 
-.about-project__title {
+.title {
     position: relative;
     font-size: 22px;
     font-weight: 400;
@@ -12,7 +12,7 @@
     margin-bottom: 94px;
 }
 
-.about-project__title::after {
+.title::after {
     content: "";
     position: absolute;
     background-color: #000000;
