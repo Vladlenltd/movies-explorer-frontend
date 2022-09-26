@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import LogoImage from "../LogoImage/LogoImage";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import LogoImage from '../LogoImage/LogoImage';
 
 function Logo() {
   return (

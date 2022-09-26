@@ -1,5 +1,5 @@
-import React from "react";
-import promoImg from "../../images/promo-img.png";
+import React from 'react';
+import promoImg from '../../images/promo-img.png';
 
 function Promo() {
   return (
@@ -7,7 +7,8 @@ function Promo() {
       <article className="promo__info">
         <div className="promo__text">
           <h1 className="promo__title">
-            Учебный проект студента факультета{" "}
+            Учебный проект студента факультета
+            {' '}
             <span className="promo__title_nowrap">Веб-разработки.</span>
           </h1>
           <p className="promo__subtitle">
@@ -22,7 +23,7 @@ function Promo() {
             Узнать больше
           </button>
         </div>
-        <img className="promo__img" src={promoImg} alt="земной шар"></img>
+        <img className="promo__img" src={promoImg} alt="земной шар" />
       </article>
     </section>
   );
