@@ -18,7 +18,7 @@ function SearchForm() {
             alt="Поиск"
           />
         </button>
-      <FilterCheckbox />
+        <FilterCheckbox />
       </div>
     </form>
   );
