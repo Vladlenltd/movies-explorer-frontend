@@ -22,14 +22,6 @@
     width: 100%;
     box-sizing: border-box;
 }
-/* .card__wrapper {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-} */
 
 .card__title {
     margin: 0;
@@ -61,4 +53,32 @@
 }
 .card__btn_liked {
     background-image: url(../../images/likes.svg);
+}
+
+@media screen and (max-width:768px) {
+    .card {
+        max-width: 339px;
+        max-height: 262px;
+    }
+    .card__preview {
+        max-width: 339px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .card {
+        max-width: 300px;
+        max-height: 237px;
+    }
+    .card__preview {
+        max-width: 300px;
+    }
+    .card__title {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .card__duration {
+        font-size: 10px;
+        line-height: 12px;
+    }
 }
