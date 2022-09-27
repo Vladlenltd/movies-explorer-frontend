@@ -23,6 +23,8 @@ function AboutMe() {
           <a
             className="about-me__link"
             href="https://github.com/Vladlenltd/"
+            target="_blank"
+            rel="noreferrer"
           >
             GitHub
           </a>
