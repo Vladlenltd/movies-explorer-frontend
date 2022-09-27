@@ -6,6 +6,10 @@
     padding: 0 70px;
 }
 
+.header_white {
+    background-color: #ffffff;
+}
+
 @media screen and (max-width: 768px) {
     .header {
         padding: 0 30px;
@@ -15,6 +19,5 @@
 @media screen and (max-width: 320px) {
     .header {
         padding: 0 14px;
-        
     }
 }

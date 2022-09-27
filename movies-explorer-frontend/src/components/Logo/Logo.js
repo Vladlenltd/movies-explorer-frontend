@@ -4,7 +4,7 @@ import LogoImage from '../LogoImage/LogoImage';
 
 function Logo() {
   return (
-    <Link to="/main" className="logo">
+    <Link to="/" className="logo">
       <LogoImage />
     </Link>
   );
