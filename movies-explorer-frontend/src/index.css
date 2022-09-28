@@ -16,3 +16,5 @@
 @import "./components/MoviesCardList/MoviesCardList.css";
 @import "./components/SavedMovies/SavedMovies.css";
 @import "./components/Profile/Profile.css";
+@import "./components/Sign/Sign.css";
+@import "./components/NotFoundPage/NotFoundPage.css"

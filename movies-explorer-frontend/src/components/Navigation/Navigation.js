@@ -11,7 +11,7 @@ function Navigation() {
         </NavLink>
         <NavLink className="navigation__link" to="/signin">
           <li>
-            <Button color="2BE080" text="Войти" />
+            <Button type="submit" color="2BE080" text="Войти" />
           </li>
         </NavLink>
       </ul>
