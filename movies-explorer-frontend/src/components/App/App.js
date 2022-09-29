@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Main from '../Main/Main';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
@@ -10,22 +10,6 @@ import NotFoundPage from '../NotFoundPage/NotFoundPage';
 import './App.css';
 
 function App() {
-  const [loggedIn, setIsLoggedIn] = React.useState(false);
-  const navigate = useNavigate();
-
-  function login() {
-    setIsLoggedIn(true);
-    navigate.push('/movies');
-  }
-
-  function logOut() {
-    setIsLoggedIn(false);
-    navigate.push('/');
-  }
-
-  function goToSignIn() {
-    navigate.push('/sign-in');
-  }
   return (
     <div className="app">
       <Routes>
