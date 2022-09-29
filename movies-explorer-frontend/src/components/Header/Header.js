@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import Navigation from '../Navigation/Navigation';
 
-function Header() {
+function Header({ loggedIn, login }) {
   const location = useLocation();
 
   return (
@@ -13,7 +14,10 @@ function Header() {
       }`}
     >
       <Logo />
-      <Navigation />
+      <Navigation
+        login={login}
+        loggedIn={loggedIn}
+      />
     </header>
   );
 }

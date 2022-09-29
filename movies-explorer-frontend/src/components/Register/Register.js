@@ -8,7 +8,7 @@ function Register() {
         title="Добро пожаловать!"
         buttonText="Зарегистрироваться"
         questionTitle="Уже зарегистрированы?"
-        bottomLink="/signin"
+        bottomLink="/sign-in"
         bottomLinkText="Войти"
         formType="sign"
       >

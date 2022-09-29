@@ -8,7 +8,7 @@ function Login() {
         title="Рады видеть!"
         buttonText="Войти"
         questionTitle="Ещё не зарегистрированы?"
-        bottomLink="/signup"
+        bottomLink="/sign-up"
         bottomLinkText="Регистрация"
         formType="sign"
       >

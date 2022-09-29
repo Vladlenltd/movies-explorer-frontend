@@ -45,3 +45,34 @@ cursor: pointer;
     color: #3456F3;
     margin: 186px 0 0 0;
 }
+.button_type_movies {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    background: transparent;
+    color: #000000;
+    margin: 0 0 0 0;
+}
+.button_type_saved-movies {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    background: transparent;
+    color: #000000;
+    max-width: 142px;
+    margin: 0 0 0 0;
+}
+.button_type_account {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    background: transparent;
+    color: #000000;
+    max-width: 142px;
+    margin: 0 0 0 0;
+    /* border: 2px solid #AAAAAA;
+    border-radius: 50px; */
+}
