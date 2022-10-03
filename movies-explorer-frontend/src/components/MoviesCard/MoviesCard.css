@@ -40,19 +40,16 @@
 }
 .card__btn {
     display: inline-flex;
+    align-items: center;
     width: 30px;
     height: 30px;
     border: none;
     background-color: inherit;
-    background-image: url(../../images/like.svg);
     transition: opasity 0.4s linear;
     cursor: pointer;
 }
 .card__btn:hover {
     opacity: 0.5;
-}
-.card__btn_liked {
-    background-image: url(../../images/likes.svg);
 }
 
 @media screen and (max-width:768px) {

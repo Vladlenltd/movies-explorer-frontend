@@ -36,7 +36,7 @@ function Navigation({ loggedIn }) {
 					className="navigation__link"
 				>
 					<button className={`navigation__button navigation__button_black-text navigation__button_saved navigation__button_transparent 
-                    ${loggedIn ? '' : 'navigation__hidden'}
+                    // ${loggedIn ? '' : 'navigation__hidden'}
                     ${location.pathname === '/' ? 'navigation__button_white-text' : ''}
                     ${location.pathname === '/saved-movies' ? 'navigation__active' : ''}`}
 					>

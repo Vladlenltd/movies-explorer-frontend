@@ -46,6 +46,7 @@
 
 .navigation__button_with-icon {
     max-width: 100px;
+    height: 32px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -113,7 +114,7 @@
     height: 44px;
     z-index: 2;
     cursor: pointer;
-    /* display: none; */
+    display: none;
 }
 
 .navigation__burger {
