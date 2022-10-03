@@ -1,0 +1,34 @@
+.navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.navigation__list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+.navigation-links {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0px;
+}
+
+.navigation-links__login {
+    background-color: #2BE080;
+    padding: 8px 20px;
+    border-radius: 3px;
+}
+
+.navigation-links__registration {
+    color: #ffffff;
+}

@@ -2,7 +2,8 @@
 @import "./vendor/fonts/fonts.css";
 @import "./components/Logo/Logo.css";
 @import "./components/Button/Button.css";
-@import "./components//Navigation/Navigation.css";
+@import "./components/MainHeader/MainHeader.css";
+@import "./components/MoviesHeader/MoviesHeader.css";
 @import "./components/Header/Header.css";
 @import "./components/Promo/Promo.css";
 @import "./components/AboutProject/AboutProject.css";

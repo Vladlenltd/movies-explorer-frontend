@@ -2,9 +2,10 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import Logo from '../Logo/Logo';
-import Navigation from '../Navigation/Navigation';
+import MainHeader from '../MainHeader/MainHeader';
+import MoviesHeader from '../MoviesHeader/MoviesHeader';
 
-function Header({ loggedIn, login }) {
+function Header(/* { loggedIn, login } */) {
 	const location = useLocation();
 
 	return (
@@ -14,10 +15,10 @@ function Header({ loggedIn, login }) {
 			}`}
 		>
 			<Logo />
-			<Navigation
-				login={login}
-				loggedIn={loggedIn}
-			/>
+			{location.pathname === '/' ? <MainHeader /> : ''}
+			{location.pathname === '/movies' ? <MoviesHeader /> : ''}
+			{location.pathname === '/saved-movies' ? <MoviesHeader /> : ''}
+			{location.pathname === '/profile' ? <MoviesHeader /> : ''}
 		</header>
 	);
 }
