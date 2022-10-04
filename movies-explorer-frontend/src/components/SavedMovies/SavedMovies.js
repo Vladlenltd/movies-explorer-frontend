@@ -6,12 +6,14 @@ import Footer from '../Footer/Footer';
 
 function SavedMovies() {
 	return (
-		<main className="saved-movies">
+		<>
 			<Header />
-			<SearchForm />
-			<MoviesCardList />
+			<main className="saved-movies">
+				<SearchForm />
+				<MoviesCardList />
+			</main>
 			<Footer />
-		</main>
+		</>
 	);
 }
 export default SavedMovies;

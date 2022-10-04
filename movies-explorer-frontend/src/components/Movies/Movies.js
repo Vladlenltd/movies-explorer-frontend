@@ -6,12 +6,14 @@ import Footer from '../Footer/Footer';
 
 function Movies() {
 	return (
-		<main className="movies">
+		<>
 			<Header />
-			<SearchForm />
-			<MoviesCardList />
+			<main className="movies">
+				<SearchForm />
+				<MoviesCardList />
+			</main>
 			<Footer />
-		</main>
+		</>
 	);
 }
 export default Movies;
