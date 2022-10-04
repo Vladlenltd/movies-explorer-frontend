@@ -1,9 +1,9 @@
 .navigate {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    gap: 364px;
+    /* gap: 364px; */
     width: 100%;
 }
 
@@ -65,9 +65,13 @@
 }
 @media screen and (max-width: 768px) {
     .navigate__button-open {
-        display: block;
+        display: flex;
+        justify-content: flex-end;
     }
     .navigate {
+        display: none;
+    }
+    .navigate__profile {
         display: none;
     }
 }
