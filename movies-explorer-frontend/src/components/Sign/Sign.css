@@ -2,13 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 70px 442px;
+    padding: 70px 0;
     text-align: left;
 }
 
 .sign-form {
     padding: 70px 0;
-    width: 396px;
+    max-width: 396px;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -100,13 +101,7 @@
     color: #3456F3;
 }
 
-@media screen and (max-width: 768px) {
-    .sign {
-    padding: 70px 0;
-}
-}
-
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 450px) {
     .sign-form {
         width: 260px;
     }
