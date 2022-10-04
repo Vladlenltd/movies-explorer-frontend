@@ -8,7 +8,7 @@ function Profile({ logOut }) {
 	return (
 		<div className="profile__container">
 			<Header />
-			<section className="profile">
+			<main className="profile">
 				<h2 className="profile__title">
 					Привет
 					{userName}
@@ -39,7 +39,7 @@ function Profile({ logOut }) {
 						Выйти из аккаунта
 					</button>
 				</div>
-			</section>
+			</main>
 		</div>
 	);
 }

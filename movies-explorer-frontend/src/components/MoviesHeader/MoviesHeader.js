@@ -1,3 +1,5 @@
+/* eslint-disable react/button-has-type */
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import { React, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import AccountLogo from '../../images/account-logo.svg';

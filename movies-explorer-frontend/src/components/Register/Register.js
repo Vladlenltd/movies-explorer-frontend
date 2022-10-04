@@ -3,7 +3,7 @@ import EnteryForm from '../Sign/Sign';
 
 function Register() {
 	return (
-		<section className="sign">
+		<main className="sign">
 			<EnteryForm
 				title="Добро пожаловать!"
 				buttonText="Зарегистрироваться"
@@ -52,7 +52,7 @@ function Register() {
 				</label>
 				<span className="sign-form__error"><p className="sign-form__error-text ">Что то пошло не так...</p></span>
 			</EnteryForm>
-		</section>
+		</main>
 	);
 }
 

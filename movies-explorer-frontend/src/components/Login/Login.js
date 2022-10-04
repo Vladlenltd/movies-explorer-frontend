@@ -3,7 +3,7 @@ import Sign from '../Sign/Sign';
 
 function Login() {
 	return (
-		<section className="sign">
+		<main className="sign">
 			<Sign
 				title="Рады видеть!"
 				buttonText="Войти"
@@ -39,7 +39,7 @@ function Login() {
 				</label>
 				<span className="sign-form__error"><p className="sign-form__error-text ">Что то пошло не так...</p></span>
 			</Sign>
-		</section>
+		</main>
 	);
 }
 
