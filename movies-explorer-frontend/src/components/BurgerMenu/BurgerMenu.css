@@ -77,6 +77,17 @@
     line-height: 16px;
     transition: opacity 0.3s linear;
     cursor: pointer;
+    display: flex;
+    border: 2px solid #AAAAAA;
+    border-radius: 50px;
+    text-decoration: none;
+    padding: 8px 12px;
+    color: #000000;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 100px;
+    width: 100%;
+    justify-content: center;
 }
 
 .burger-menu__btn-profile:hover {

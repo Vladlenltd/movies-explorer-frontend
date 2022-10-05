@@ -23,7 +23,7 @@ function BurgerMenu({ isOpen, isClose }) {
 						Сохраненные фильмы
 					</Link>
 				</nav>
-				<Link to="/profile" className="navigate__profile burger-menu__btn-profile">
+				<Link to="/profile" className="burger-menu__btn-profile">
 					<img className="profile__img" src={AccountLogo} alt="иконка аккаунта" />
 					Аккаунт
 				</Link>
