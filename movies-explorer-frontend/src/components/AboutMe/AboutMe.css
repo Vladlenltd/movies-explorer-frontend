@@ -8,6 +8,7 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 49px;
 }
 
 .about-me__description {
@@ -106,6 +107,7 @@
     .about-me__wrapper {
         flex-direction: column-reverse;
         align-items: center;
+        gap: 0;
     }
 
     .about-me__img {
