@@ -49,7 +49,7 @@
         grid-column-gap: 24px;
     }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 550px) {
     .movies-list {
         padding: 40px 10px;
     }
