@@ -54,7 +54,7 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 790px) {
     .promo {
         padding: 140px 44px 76px;
     }
