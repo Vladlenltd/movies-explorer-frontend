@@ -1,0 +1,104 @@
+.promo {
+    background-color: #073042;
+    margin: 0;
+    padding: 75px 70px;
+}
+
+.promo__info {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.promo__text {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 640px;
+    color: #ffffff;
+}
+
+.promo__title {
+    margin: 0 0 36px;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 58px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.promo__title_nowrap {
+    white-space: nowrap;
+}
+.promo__subtitle {
+    margin: 0 0 146px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0px;
+    text-align: left;
+    max-width: 310px;
+    opacity: 0.5;
+}
+
+.promo__button {
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: transparent;
+    border-radius: 3px;
+    border: 1px solid #FFFFFF;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 790px) {
+    .promo {
+        padding: 140px 44px 76px;
+    }
+    .promo__info {
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    .promo__text {
+        align-items: center;
+    }
+    .promo__title {
+        margin: 48px 0 22px;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 50px;
+        text-align: center;
+
+    }
+    .promo__title_nowrap {
+        white-space: pre-line;
+    }
+    .promo__subtitle {
+        text-align: center;
+        margin: 0 0 92px;
+        max-width: 260px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .promo {
+        padding: 70px 10px 30px;
+    }
+    .promo__title {
+        margin: 48px 0 22px;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 38px;
+        letter-spacing: -0.04em;
+    }
+    .promo__subtitle {
+        margin: 0 0 80px;;
+    }
+    .promo__img {
+        width: 210px
+    }
+}
