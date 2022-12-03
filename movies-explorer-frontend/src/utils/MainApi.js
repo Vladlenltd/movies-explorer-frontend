@@ -40,7 +40,37 @@ class MainApi {
             },
         }).then(this._checkStatus);
     }
-
+    // получение фильмов
+    getMovies(token) {
+        return fetch(`${this._baseUrl}/movies`, {
+            method: 'GET',
+            headers: {
+                ...this._headers,
+                authorization: `Brearer ${token}`
+            },
+        }).then(this._checkStatus);
+    }
+    //сохранение фильмов
+    saveMovies(data, token) {
+        return fetch(`${this._baseUrl}/movies`, {
+            method: 'POST',
+            headers: {
+                ...this._headers,
+                authorization: `Brearer ${token}`
+            },
+            body: JSON.stringify(data)
+        }).then(this._checkStatus);
+    }
+    //удаление фильмов
+    deleteMovies(userId, token) {
+        return fetch(`${this._baseUrl}/movies/${userId}`, {
+            method: 'DELETE',
+            headers: {
+                ...this._headers,
+                authorization: `Breare ${token}`
+            },
+        }).then(this._checkStatus);
+    }
 }
 
 export const mainApi = new MainApi({
