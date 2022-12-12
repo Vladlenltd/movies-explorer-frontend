@@ -45,6 +45,32 @@ class MainApi {
     }).then(this._checkStatus);
   }
 
+  // получениие данных пользователя
+  getUserInfo(token) {
+    return fetch(`${this._baseUrl}/users/me`, {
+      method: 'GET',
+      headers: {
+        ...this._headers,
+        authorization: `Bearer ${token}`
+      },
+    }).then(this._checkStatus);
+  }
+
+  //обновление данных пользователя
+  updateUserInfo(data, token) {
+    return fetch(`${this._baseUrl}/users/me`, {
+      method: 'PATCH',
+      headers: {
+        ...this._headers,
+        authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify({
+        name: data.name,
+        email: data.email
+      })
+    })
+  }
+
   // получение фильмов
   getMovies(token) {
     return fetch(`${this._baseUrl}/movies`, {

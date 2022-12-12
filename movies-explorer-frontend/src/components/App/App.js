@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { mainApi } from '../../utils/MainApi';
 import Main from '../Main/Main';
@@ -12,12 +12,19 @@ import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import './App.css';
 
 function App() {
+	const [loggedIn, setLoggedIn] = React.useState(false);
 	const [isLoginSuccess, setIsLoginSuccess] = React.useState(false);
-	const navigate = useNavigate();
 	const [userEmail, setUserEmail] = React.useState("");
+	const navigate = useNavigate();
+	const token = localStorage.getItem('jwt');
 
+	useEffect(() => {
+		if (loggedIn) {
+
+		}
+	})
 	function handleCheckToken() {
-		const token = localStorage.getItem('jwt');
+		// const token = localStorage.getItem('jwt');
 		if (token) {
 			mainApi.checkTokenValidity()
 				.then((res) => {
@@ -67,7 +74,8 @@ function App() {
 				<Route
 					path="/movies/"
 					element={(
-						<PrivateRoute>
+						<PrivateRoute
+							isLoginSuccess={isLoginSuccess}>
 							<Movies />
 						</PrivateRoute>
 					)}
