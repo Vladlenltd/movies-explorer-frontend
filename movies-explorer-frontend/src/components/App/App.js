@@ -13,10 +13,11 @@ import './App.css';
 
 function App() {
 	const [loggedIn, setLoggedIn] = React.useState(false);
-	const [isLoginSuccess, setIsLoginSuccess] = React.useState(false);
-	const [userEmail, setUserEmail] = React.useState("");
+	// const [userEmail, setUserEmail] = React.useState("");
 	const navigate = useNavigate();
 	const token = localStorage.getItem('jwt');
+	console.log(token)
+	console.log(loggedIn);
 
 	useEffect(() => {
 		if (loggedIn) {
@@ -24,17 +25,19 @@ function App() {
 		}
 	})
 	function handleCheckToken() {
-		// const token = localStorage.getItem('jwt');
 		if (token) {
-			mainApi.checkTokenValidity()
+			mainApi.checkTokenValidity(token)
 				.then((res) => {
 					if (res) {
-						setUserEmail(res.email);
-						setIsLoginSuccess(true);
-						navigate('/');
+						// setUserEmail(res.email);
+						// setLoggedIn(true);
+						// navigate('/movies');
 					}
 				})
-				.catch((err) => console.log(err));
+				.catch((err) => {
+					logOut();
+					console.log(err)
+				});
 		}
 	}
 
@@ -44,11 +47,12 @@ function App() {
 				if (data) {
 					localStorage.setItem("jwt", data.token);
 					handleCheckToken();
+					setLoggedIn(true);
 					navigate("/movies");
 				}
 			})
 			.catch((err) => {
-				setIsLoginSuccess(false)
+				setLoggedIn(false)
 				console.log(err);
 			});
 	}
@@ -57,14 +61,21 @@ function App() {
 		mainApi.registration(name, email, password)
 			.then(() => {
 				handleLogin(email, password);
-				setIsLoginSuccess(true)
+				setLoggedIn(true)
 
 				// navigate('/sign-in');
 			})
 			.catch((err) => {
-				setIsLoginSuccess(false);
+				setLoggedIn(false);
 				console.log(err)
 			})
+	}
+	// выход
+
+	function logOut() {
+		localStorage.clear();
+		setLoggedIn(false);
+		navigate('/')
 	}
 
 	return (
@@ -72,10 +83,9 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Main />} />
 				<Route
-					path="/movies/"
+					path="/movies"
 					element={(
-						<PrivateRoute
-							isLoginSuccess={isLoginSuccess}>
+						<PrivateRoute onLogin={loggedIn}>
 							<Movies />
 						</PrivateRoute>
 					)}
@@ -83,7 +93,7 @@ function App() {
 				<Route
 					path="/saved-movies"
 					element={(
-						<PrivateRoute>
+						<PrivateRoute onLogin={loggedIn}>
 							<SavedMovies />
 						</PrivateRoute>
 					)}
@@ -91,8 +101,10 @@ function App() {
 				<Route
 					path="/profile"
 					element={(
-						<PrivateRoute>
-							<Profile />
+						<PrivateRoute onLogin={loggedIn}>
+							<Profile
+								logOut={logOut}
+							/>
 						</PrivateRoute>
 					)}
 				/>

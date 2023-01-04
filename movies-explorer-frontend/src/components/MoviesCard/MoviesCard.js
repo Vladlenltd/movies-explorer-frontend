@@ -27,7 +27,7 @@ function MoviesCard() {
 						type="button"
 						onClick={likeCard}
 					>
-						{isLiked ? <MoviesLikeButtonActive /> : <MoviesLikeButton /> }
+						{isLiked ? <MoviesLikeButtonActive /> : <MoviesLikeButton />}
 					</button>
 				)}
 				{location.pathname === '/saved-movies' && (

@@ -4,14 +4,13 @@ import Header from '../Header/Header';
 
 // eslint-disable-next-line react/prop-types
 function Profile({ logOut }) {
-	const userName = ' Keks';
 	return (
 		<div className="profile__container">
 			<Header />
 			<main className="profile">
 				<h2 className="profile__title">
 					Привет
-					{userName}
+					{/* {userName} */}
 					!
 				</h2>
 				<form className="profile__form" name="change-profile-form">
