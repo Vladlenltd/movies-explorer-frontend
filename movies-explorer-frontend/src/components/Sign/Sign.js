@@ -6,7 +6,7 @@ import Logo from '../Logo/Logo';
 import Button from '../Button/Button';
 
 function EnteryForm({
-	title, children, buttonText, questionTitle, bottomLink, bottomLinkText, formType,
+	title, children, buttonText, buttonDisable, questionTitle, bottomLink, bottomLinkText, formType, onClick,
 }) {
 	return (
 		<form className={`form ${formType}-form`}>
@@ -21,6 +21,9 @@ function EnteryForm({
 				<Button
 					text={buttonText}
 					type={`${formType}-form-submit`}
+					onClick={onClick}
+					buttonDisabled={buttonDisable}
+
 				/>
 				{formType === 'sign'
 					&& (
