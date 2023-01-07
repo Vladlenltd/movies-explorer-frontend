@@ -6,11 +6,17 @@
     list-style: none;
     max-width: 364px;
     max-height: 281px;
+    width: 100%;
     margin: 0;
     padding: 0;
     background-color: #fdfdfd;
     box-shadow: 0 4px 30px rgba(0, 0, 0, .08);
     border-radius: 6px;
+}
+.card__preview {
+ width: 360px;
+    height: 201px;
+    object-fit: cover;
 }
 .card__description {
     padding: 16px 16px 17px;
@@ -47,6 +53,9 @@
     background-color: inherit;
     transition: opasity 0.4s linear;
     cursor: pointer;
+}
+.card__btn_delete{
+    
 }
 .card__btn:hover {
     opacity: 0.5;

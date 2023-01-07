@@ -1,46 +1,68 @@
 /* eslint-disable react/jsx-closing-tag-location */
-import React, { useState } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 import MoviesDeleteButton from '../MoviesDeleteButton/MoviesDeleteButton';
 import MoviesLikeButton from '../MoviesLikeButton/MoviesLikeButton';
 import MoviesLikeButtonActive from '../MoviesLikeButtonActive/MoviesLikeButtonActive';
-import preview from '../../images/preview.png';
 
-function MoviesCard() {
-	const title = '33 слова о дизайне';
-	const duration = '1ч 47м';
-	const [isLiked, setIsLiked] = useState(false);
+function MoviesCard({
+	name,
+	duration,
+	thumbnail,
+	trailerLink,
+	savedMovies,
+	onSave,
+	onDelete,
+	movie,
+}) {
 	const location = useLocation();
+	const isSaved = savedMovies.some((m) => m.movieId === movie.id);
+	// const isAllSaved = allSavedMovies.some((m) => m.movieId === movie.id);
+	const hours = Math.trunc(duration / 60);
+	const minutes = duration % 60;
 
-	function likeCard() {
-		setIsLiked(!isLiked);
-	}
+	// let buttonClassName =
+	// 	isSaved || isAllSaved
+	// 		? 'movies-card__button movies-card__button_save'
+	// 		: 'movies-card__button';
+
+	const handleSaveClick = () => {
+		if (isSaved) {
+			onDelete(savedMovies.filter((m) => m.movieId === movie.id)[0]);
+		} else {
+			onSave(movie);
+		}
+	};
+
+	const handleDeleteMovie = () => onDelete(movie);
 
 	return (
 		<li className="card">
-			<img className="card__preview" src={preview} alt="превью" />
+			<a href={trailerLink} target="_blank" rel="noreferrer">
+				<img className="card__preview" src={thumbnail} alt={name} />
+			</a>
 			<div className="card__description">
-				<h4 className="card__title">{title}</h4>
+				<h4 className="card__title">{name}</h4>
 				{location.pathname === '/movies' && (
 					<button
 						className="card__btn"
 						type="button"
-						onClick={likeCard}
+						onClick={handleSaveClick}
 					>
-						{isLiked ? <MoviesLikeButtonActive /> : <MoviesLikeButton />}
+						{isSaved ? <MoviesLikeButtonActive /> : <MoviesLikeButton />}
 					</button>
 				)}
 				{location.pathname === '/saved-movies' && (
 					<button
-						className="card__btn"
-						type="button"
-						onClick={likeCard}
-					>
+						className='card__btn'
+						type='button'
+						onClick={handleDeleteMovie}>
 						<MoviesDeleteButton />
 					</button>
-				)}
+				)
+				}
 			</div>
-			<p className="card__duration">{duration}</p>
+			<p className="card__duration">{`${hours}ч ${minutes}м`}</p>
 		</li>
 	);
 }

@@ -7,10 +7,13 @@ import AboutMe from '../AboutMe/AboutMe';
 import Portfolio from '../Portfolio/Portfolio';
 import Footer from '../Footer/Footer';
 
-function Main() {
+function Main({ onLogin }) {
 	return (
 		<>
-			<Header />
+			<Header
+				onLogin={onLogin}
+				colorTheme={true}
+			/>
 			<main className="main">
 				<Promo />
 				<AboutProject />

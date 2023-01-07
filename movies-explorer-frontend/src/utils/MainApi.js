@@ -46,68 +46,81 @@ class MainApi {
   }
 
   // получениие данных пользователя
-  getUserInfo(token) {
+  getUserInfo() {
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'GET',
       headers: {
         ...this._headers,
-        authorization: `Bearer ${token}`
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
       },
     }).then(this._checkStatus);
   }
 
   //обновление данных пользователя
-  updateUserInfo(data, token) {
+  updateUserInfo(name, email) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'PATCH',
       headers: {
         ...this._headers,
-        authorization: `Bearer ${token}`
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
       },
       body: JSON.stringify({
-        name: data.name,
-        email: data.email
+        name: name,
+        email: email
       })
     })
   }
 
   // получение фильмов
-  getMovies(token) {
+  getMovies() {
     return fetch(`${this._baseUrl}/movies`, {
       method: 'GET',
       headers: {
         ...this._headers,
-        authorization: `Brearer ${token}`,
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
       },
     }).then(this._checkStatus);
   }
 
   // сохранение фильмов
-  saveMovies(data, token) {
+  saveMovies(data) {
     return fetch(`${this._baseUrl}/movies`, {
       method: 'POST',
       headers: {
         ...this._headers,
-        authorization: `Brearer ${token}`,
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        country: data.country,
+        director: data.director,
+        duration: data.duration,
+        year: data.year,
+        description: data.description,
+        image: `https://api.nomoreparties.co${data.image.url}`,
+        trailerLink: data.trailerLink,
+        thumbnail: `https://api.nomoreparties.co${data.image.formats.thumbnail.url}`,
+        movieId: data.id.toString(),
+        nameRU: data.nameRU,
+        nameEN: data.nameEN,
+      }),
     }).then(this._checkStatus);
   }
 
   // удаление фильмов
-  deleteMovies(userId, token) {
-    return fetch(`${this._baseUrl}/movies/${userId}`, {
+  deleteMovies(id) {
+    return fetch(`${this._baseUrl}/movies/${id}`, {
       method: 'DELETE',
       headers: {
         ...this._headers,
-        authorization: `Breare ${token}`,
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
       },
     }).then(this._checkStatus);
   }
 }
 
 export const mainApi = new MainApi({
-  baseUrl: 'http://localhost:3000',
+  // baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://api.movies.vltd.nomoredomains.sbs',
   headers: {
     'Content-type': 'application/json',
   },

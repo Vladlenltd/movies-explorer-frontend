@@ -28,6 +28,7 @@ function Login({ onLogin }) {
 	}
 
 	function handleSubmit(e) {
+		e.preventDefault()
 		onLogin(email, password);
 	}
 
