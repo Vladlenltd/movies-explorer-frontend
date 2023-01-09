@@ -1,6 +1,6 @@
 class MainApi {
   constructor(data) {
-    this._baseUrl = data.baseUrl;
+    this._baseURL = data.baseURL;
     this._headers = data.headers;
   }
 
@@ -11,7 +11,7 @@ class MainApi {
 
   // регистрация
   registration(name, email, password) {
-    return fetch(`${this._baseUrl}/signup`, {
+    return fetch(`${this._baseURL}/sign-up`, {
       method: 'POST',
       headers: this._headers,
       body: JSON.stringify({
@@ -24,7 +24,7 @@ class MainApi {
 
   // авторизация
   login(email, password) {
-    return fetch(`${this._baseUrl}/signin`, {
+    return fetch(`${this._baseURL}/signin`, {
       method: 'POST',
       headers: this._headers,
       body: JSON.stringify({
@@ -36,7 +36,7 @@ class MainApi {
 
   // проверка токена
   checkTokenValidity(token) {
-    return fetch(`${this._baseUrl}/users/me`, {
+    return fetch(`${this._baseURL}/users/me`, {
       method: 'GET',
       headers: {
         ...this._headers,
@@ -47,7 +47,7 @@ class MainApi {
 
   // получениие данных пользователя
   getUserInfo() {
-    return fetch(`${this._baseUrl}/users/me`, {
+    return fetch(`${this._baseURL}/users/me`, {
       method: 'GET',
       headers: {
         ...this._headers,
@@ -58,7 +58,7 @@ class MainApi {
 
   //обновление данных пользователя
   updateUserInfo(name, email) {
-    return fetch(`${this._baseUrl}/users/me`, {
+    return fetch(`${this._baseURL}/users/me`, {
       method: 'PATCH',
       headers: {
         ...this._headers,
@@ -73,7 +73,7 @@ class MainApi {
 
   // получение фильмов
   getMovies() {
-    return fetch(`${this._baseUrl}/movies`, {
+    return fetch(`${this._baseURL}/movies`, {
       method: 'GET',
       headers: {
         ...this._headers,
@@ -84,7 +84,7 @@ class MainApi {
 
   // сохранение фильмов
   saveMovies(data) {
-    return fetch(`${this._baseUrl}/movies`, {
+    return fetch(`${this._baseURL}/movies`, {
       method: 'POST',
       headers: {
         ...this._headers,
@@ -108,7 +108,7 @@ class MainApi {
 
   // удаление фильмов
   deleteMovies(id) {
-    return fetch(`${this._baseUrl}/movies/${id}`, {
+    return fetch(`${this._baseURL}/movies/${id}`, {
       method: 'DELETE',
       headers: {
         ...this._headers,
@@ -119,8 +119,8 @@ class MainApi {
 }
 
 export const mainApi = new MainApi({
-  // baseUrl: 'http://localhost:3000',
-  baseUrl: 'https://api.movies.vltd.nomoredomains.sbs',
+  // baseURL: 'http://localhost:3000',
+  baseURL: 'https://api.movies.vltd.nomoredomains.sbs',
   headers: {
     'Content-type': 'application/json',
   },

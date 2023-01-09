@@ -26,7 +26,6 @@ function App() {
 	const [checkedSaveMovies, setCheckedSaveMovies] = useState(true);
 	const [isLoading, setIsLoading] = useState(false);
 	const [allSavedMovies, setAllSavedMovies] = useState([]);
-	const [isMessageProfile, setIsMessageProfile] = useState(false);
 	const [isNotFound, setIsNotFound] = useState(false);
 
 	useEffect(() => {
@@ -223,7 +222,6 @@ function App() {
 	function handleUpdateUser(name, email) {
 		mainApi.updateUserInfo(name, email)
 			.then((data) => {
-				setIsMessageProfile(true);
 				setCurrentUser(data);
 			})
 			.catch((err) => {

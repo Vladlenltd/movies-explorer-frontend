@@ -3,7 +3,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    /* gap: 364px; */
     width: 100%;
 }
 
@@ -18,7 +17,7 @@
     font-weight: 400;
     line-height: 18px;
     letter-spacing: 0em;
-    max-width: 212px;
+    max-width: 216px;
     width: 100%;
 }
 
@@ -30,7 +29,7 @@
     opacity: 0.8;
 }
 
-.navigate__movies:focus {
+.navigate__movies_active {
     font-weight: bold;
 }
 

@@ -14,12 +14,13 @@ function MoviesHeader() {
 			<nav className="navigate">
 				<ul className="navigate__list">
 					<li className="navigate__item">
-						<NavLink to="/movies" className="navigate__movies">
+						<NavLink to="/movies" className={({ isActive }) => isActive ? "navigate__movies navigate__movies_active" : "navigate__movies"}>
 							Фильмы
 						</NavLink>
 					</li>
 					<li className="navigate__item">
-						<NavLink to="/saved-movies" className="navigate__movies">
+						{/* <NavLink to="/saved-movies" className="navigate__movies"> */}
+						<NavLink to="/saved-movies" className={({ isActive }) => isActive ? "navigate__movies navigate__movies_active" : "navigate__movies"}>
 							Сохранённые фильмы
 						</NavLink>
 					</li>

@@ -1,13 +1,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import Header from '../Header/Header';
 import { CurrentUserContext } from '../Context/CurrentUserContext';
 import { ValidationForms } from '../ValidationForms/ValidationForms'
 
 // eslint-disable-next-line react/prop-types
-function Profile({ handleUpdateUser, logOut, isMessageProfile }) {
+function Profile({ handleUpdateUser, logOut }) {
 	const currentUser = useContext(CurrentUserContext);
-	const [isEditInput, setIsEditInput] = useState(true);
 	const controlInput = ValidationForms();
 
 	const handleSubmit = (e) => {
@@ -20,7 +19,6 @@ function Profile({ handleUpdateUser, logOut, isMessageProfile }) {
 		} else {
 			handleUpdateUser(name, email);
 		}
-		setTimeout(() => setIsEditInput((state) => !state), 1000);
 		controlInput.resetForm();
 	};
 
@@ -41,7 +39,7 @@ function Profile({ handleUpdateUser, logOut, isMessageProfile }) {
 							minLength='5'
 							maxLength='40'
 							required='{true}'
-							placeholder={currentUser.name}
+							placeholder={currentUser}
 							pattern='[A-Za-zА-Яа-яЁё\s-]+'
 							onChange={controlInput.handleChange}
 							value={controlInput?.values?.name ?? currentUser.name}
