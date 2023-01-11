@@ -233,7 +233,13 @@ function App() {
 	function logOut() {
 		localStorage.clear();
 		setLoggedIn(false);
-		navigate('/')
+		setMovies([]);
+		setSavedMovies([]);
+		setAllSavedMovies([]);
+		setChecked(true);
+		setCheckedSaveMovies(true);
+		setCurrentUser({});
+		navigate('/');
 	}
 
 	return (
