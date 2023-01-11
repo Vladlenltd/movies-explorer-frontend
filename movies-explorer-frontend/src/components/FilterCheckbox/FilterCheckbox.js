@@ -20,6 +20,7 @@ function FilterCheckbox({ onCheckbox, checked, checkedSaveMovies }) {
 					id="short-movie"
 					defaultValue='yes'
 					onChange={handleCheckbox}
+					checked={!checked}
 				/>
 			) : (
 				<input
@@ -28,6 +29,7 @@ function FilterCheckbox({ onCheckbox, checked, checkedSaveMovies }) {
 					id="short-movie"
 					defaultValue='yes'
 					onChange={handleCheckbox}
+					checked={!checkedSaveMovies}
 				/>
 			)
 			}
