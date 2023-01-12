@@ -65,6 +65,7 @@ function Register({ onRegistration }) {
 						placeholder="Имя"
 						value={name || ''}
 						onChange={handleChangeName}
+						pattern='[A-Za-zА-Яа-яЁё\s-]+'
 					/>
 				</label>
 				<span className="sign-form__error"><p className="sign-form__error-text">{errors.name ? 'Поле должно содержать от 2 до 30 символов (буквы, пробелы и дефисы)' : ''}</p></span>
@@ -79,6 +80,7 @@ function Register({ onRegistration }) {
 						placeholder="E-mail"
 						value={email || ''}
 						onChange={handleChangeEmail}
+						pattern='^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
 					/>
 				</label>
 				<span className="sign-form__error"><p className="sign-form__error-text">{errors.email || ''}</p></span>

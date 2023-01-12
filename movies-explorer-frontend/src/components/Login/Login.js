@@ -58,6 +58,7 @@ function Login({ onLogin }) {
 						placeholder="E-mail"
 						value={email || ''}
 						onChange={handleChangeEmail}
+						pattern='^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
 					/>
 				</label>
 				<span className="sign-form__error"><p className="sign-form__error-text">{errors.email || ''}</p></span>
