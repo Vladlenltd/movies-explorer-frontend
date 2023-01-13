@@ -222,8 +222,9 @@ function App() {
 	}
 	function handleUpdateUser(name, email) {
 		mainApi.updateUserInfo(name, email)
-			.then((data) => {
-				setCurrentUser(data);
+			.then((name, email) => {
+				setCurrentUser(name, email);
+				// console.log(data)
 			})
 			.catch((err) => {
 				console.log(err)

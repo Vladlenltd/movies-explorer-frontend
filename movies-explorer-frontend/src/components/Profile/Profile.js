@@ -25,7 +25,7 @@ function Profile({ handleUpdateUser, logOut }) {
     useEffect(() => {
         setName(currentUser.name);
         setEmail(currentUser.email);
-    }, [currentUser]);
+    }, [currentUser.name, currentUser.email]);
 
     function handleChangeName(e) {
         setName(e.target.value);
@@ -37,8 +37,7 @@ function Profile({ handleUpdateUser, logOut }) {
         handleChange(e);
     }
 
-    function handleSubmit(e) {
-        e.preventDefault()
+    function handleSubmit() {
         handleUpdateUser(name, email);
     }
     return (
@@ -54,13 +53,13 @@ function Profile({ handleUpdateUser, logOut }) {
                             id="name"
                             name='name'
                             type='text'
-                            minLength='5'
+                            minLength='2'
                             maxLength='40'
                             required='{true}'
                             placeholder={currentUser.name}
                             pattern='[A-Za-zА-Яа-яЁё\s-]+'
                             onChange={handleChangeName}
-                            value={name || ''}
+                            value={name === undefined ? currentUser.name : name}
                         />
                         <label className="profile__label profile__label_name" htmlFor="name">Имя</label>
                         <span className="sign-form__error"><p className="sign-form__error-text">{errors.name || ''}</p></span>
@@ -76,7 +75,7 @@ function Profile({ handleUpdateUser, logOut }) {
                             placeholder={currentUser.email}
                             pattern='^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
                             onChange={handleChangeEmail}
-                            value={email || ''}
+                            value={email === undefined ? currentUser.email : email}
                         />
                         <label className="profile__label profile__label_email" htmlFor="email">E-mail</label>
                         <span className="sign-form__error"><p className="sign-form__error-text">{errors.email || ''}</p></span>
