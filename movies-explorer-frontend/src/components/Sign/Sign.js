@@ -1,6 +1,5 @@
 /* eslint-disable no-tabs */
 /* eslint-disable react/prop-types */
-import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import Button from '../Button/Button';
@@ -23,7 +22,6 @@ function EnteryForm({
 					type={`${formType}-form-submit`}
 					onClick={onClick}
 					buttonDisabled={buttonDisable}
-
 				/>
 				{formType === 'sign'
 					&& (
@@ -32,7 +30,6 @@ function EnteryForm({
 							<Link to={bottomLink} className="sign__link">{bottomLinkText}</Link>
 						</div>
 					)}
-
 				{formType === 'profile'
 					&& (
 						<Link to={bottomLink} className="profile__link">{bottomLinkText}</Link>

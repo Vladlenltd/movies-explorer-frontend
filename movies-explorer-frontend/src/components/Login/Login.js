@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Sign from '../Sign/Sign';
 import ValidationForms from '../ValidationForms/ValidationForms';
 
 function Login({ onLogin }) {
-	const [email, setEmail] = React.useState('');
-	const [password, setPassword] = React.useState('');
-	const [isButtonActive, setIsButtonActive] = React.useState(false);
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [isButtonActive, setIsButtonActive] = useState(false);
 
 	const { values, handleChange, errors, isValid, resetForm } = ValidationForms()
 

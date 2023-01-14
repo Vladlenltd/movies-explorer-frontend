@@ -1,4 +1,3 @@
-import React from 'react';
 import foto from '../../images/IMG_3514(600x600).jpg';
 
 function AboutMe() {

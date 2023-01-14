@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import { showingMovies_5, showingMovies_8, showingMovies_12, addMovies_2, addMovies_3, breakPoint_1280, breakPoint_768, breakPoint_480 } from '../../utils/constants';

@@ -1,14 +1,14 @@
 /* eslint-disable react/jsx-no-bind */
-import React, { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import EnteryForm from '../Sign/Sign';
 import ValidationForms from '../ValidationForms/ValidationForms';
 
 
 function Register({ onRegistration }) {
-	const [name, setName] = React.useState('');
-	const [email, setEmail] = React.useState('');
-	const [password, setPassword] = React.useState('');
-	const [isButtonActive, setIsButtonActive] = React.useState(false);
+	const [name, setName] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [isButtonActive, setIsButtonActive] = useState(false);
 
 	const { values, handleChange, errors, isValid, resetForm } = ValidationForms()
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom'
 
 function NotFoundPage() {
@@ -12,7 +11,7 @@ function NotFoundPage() {
 					Страница не найдена
 				</p>
 			</div>
-			<Link className="not-found__link" href="#" to={-1}>Назад</Link>
+			<Link className="not-found__link" to={-1}>Назад</Link>
 		</section>
 	);
 }

@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
 
 function Button({ type, text, onClick, buttonDisabled }) {
 	return (

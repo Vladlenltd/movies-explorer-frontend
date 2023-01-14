@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
 import { useLocation } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import MainHeader from '../MainHeader/MainHeader';

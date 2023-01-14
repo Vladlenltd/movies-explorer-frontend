@@ -1,4 +1,3 @@
-import React from 'react';
 import arrow from '../../images/arrow.svg';
 
 function Portfolio() {

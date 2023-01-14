@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
 import { mainApi } from '../../utils/MainApi';
 import { moviesApi } from '../../utils/MovieApi';

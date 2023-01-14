@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-closing-tag-location */
-import React from 'react';
 import { useLocation } from 'react-router-dom';
 import MoviesDeleteButton from '../MoviesDeleteButton/MoviesDeleteButton';
 import MoviesLikeButton from '../MoviesLikeButton/MoviesLikeButton';
@@ -17,15 +16,8 @@ function MoviesCard({
 }) {
 	const location = useLocation();
 	const isSaved = savedMovies.some((m) => m.movieId === movie.id);
-	// const isAllSaved = allSavedMovies.some((m) => m.movieId === movie.id);
 	const hours = Math.trunc(duration / 60);
 	const minutes = duration % 60;
-
-	// let buttonClassName =
-	// 	isSaved || isAllSaved
-	// 		? 'movies-card__button movies-card__button_save'
-	// 		: 'movies-card__button';
-
 	const handleSaveClick = () => {
 		if (isSaved) {
 			onDelete(savedMovies.filter((m) => m.movieId === movie.id)[0]);

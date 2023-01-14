@@ -1,4 +1,3 @@
-import React from 'react';
 import promoImg from '../../images/promo-img.png';
 
 function Promo() {
