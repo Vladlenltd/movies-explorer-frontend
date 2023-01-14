@@ -14,7 +14,7 @@ import { CurrentUserContext } from '../Context/CurrentUserContext';
 import './App.css';
 
 function App() {
-	const [loggedIn, setLoggedIn] = React.useState(false);
+	const [loggedIn, setLoggedIn] = useState(false);
 	const location = useLocation();
 	const navigate = useNavigate();
 	const token = localStorage.getItem('jwt');
@@ -212,7 +212,6 @@ function App() {
 		mainApi.registration(name, email, password)
 			.then(() => {
 				handleLogin(email, password);
-				setLoggedIn(true)
 				navigate('/sign-in');
 			})
 			.catch((err) => {
