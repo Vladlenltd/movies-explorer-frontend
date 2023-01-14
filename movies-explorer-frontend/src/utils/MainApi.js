@@ -11,7 +11,7 @@ class MainApi {
 
   // регистрация
   registration(name, email, password) {
-    return fetch(`${this._baseURL}/sign-up`, {
+    return fetch(`${this._baseURL}/signup`, {
       method: 'POST',
       headers: this._headers,
       body: JSON.stringify({
