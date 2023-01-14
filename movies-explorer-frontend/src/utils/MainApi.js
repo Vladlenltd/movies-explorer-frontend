@@ -68,7 +68,7 @@ class MainApi {
         name: name,
         email: email
       })
-    })
+    }).then(this._checkStatus);
   }
 
   // получение фильмов

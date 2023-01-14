@@ -25,6 +25,7 @@ function Profile({ handleUpdateUser, logOut }) {
     useEffect(() => {
         setName(currentUser.name);
         setEmail(currentUser.email);
+
     }, [currentUser.name, currentUser.email]);
 
     function handleChangeName(e) {
@@ -40,6 +41,7 @@ function Profile({ handleUpdateUser, logOut }) {
     function handleSubmit() {
         handleUpdateUser(name, email);
     }
+
     return (
         <div className="profile__container">
             <Header />
@@ -59,7 +61,7 @@ function Profile({ handleUpdateUser, logOut }) {
                             placeholder={currentUser.name}
                             pattern='[A-Za-zА-Яа-яЁё\s-]+'
                             onChange={handleChangeName}
-                            value={name === undefined ? currentUser.name : name}
+                            value={name || currentUser.name}
                         />
                         <label className="profile__label profile__label_name" htmlFor="name">Имя</label>
                         <span className="sign-form__error"><p className="sign-form__error-text">{errors.name || ''}</p></span>
@@ -69,13 +71,12 @@ function Profile({ handleUpdateUser, logOut }) {
                             id="email"
                             name='email'
                             type='email'
-                            required='{true}'
                             minLength='5'
                             maxLength='40'
                             placeholder={currentUser.email}
                             pattern='^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
                             onChange={handleChangeEmail}
-                            value={email === undefined ? currentUser.email : email}
+                            value={email || currentUser.email}
                         />
                         <label className="profile__label profile__label_email" htmlFor="email">E-mail</label>
                         <span className="sign-form__error"><p className="sign-form__error-text">{errors.email || ''}</p></span>
