@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Button/Button';
+import { Link } from 'react-router-dom'
 
 function NotFoundPage() {
 	return (
@@ -12,10 +12,7 @@ function NotFoundPage() {
 					Страница не найдена
 				</p>
 			</div>
-			<Button
-				type="not-found-page-go-back"
-				text="Назад"
-			/>
+			<Link className="not-found__link" href="#" to={-1}>Назад</Link>
 		</section>
 	);
 }

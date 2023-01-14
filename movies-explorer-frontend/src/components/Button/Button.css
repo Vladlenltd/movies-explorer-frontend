@@ -42,14 +42,6 @@ cursor: pointer;
     text-align: center;
 }
 
-.button_type_not-found-page-go-back {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    background: transparent;
-    color: #3456F3;
-    margin: 186px 0 0 0;
-}
 .button_type_movies {
     font-size: 13px;
     font-weight: 500;

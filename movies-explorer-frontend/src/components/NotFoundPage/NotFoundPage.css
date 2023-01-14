@@ -31,5 +31,14 @@
     text-align: center;
 }
 
+.not-found__link {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    background: transparent;
+    color: #3456F3;
+    margin: 186px 0 0 0;
+}
+
 @media screen and (max-width: 768px) {
 }
