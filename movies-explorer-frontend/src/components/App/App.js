@@ -182,7 +182,7 @@ function App() {
 				.then((res) => {
 					if (res) {
 						setLoggedIn(true);
-						navigate('/');
+						navigate(location.pathname);
 					}
 				})
 				.catch((err) => {
