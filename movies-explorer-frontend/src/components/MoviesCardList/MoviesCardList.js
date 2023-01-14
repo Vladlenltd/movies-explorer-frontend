@@ -15,7 +15,9 @@ function MoviesCardList({
 	const [moviesToLoad, setMoviesToLoad] = useState(0);
 	const [displayedMovies, setDisplayedMovies] = useState(0);
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+	const [moreBtn, setMoreBtn] = useState(false);
 	const location = useLocation();
+	const moviesLocation = location.pathname === '/movies';
 
 	const searchShortMovies = (movies) => {
 		const searchShortMovies = movies.slice(0);
@@ -33,7 +35,7 @@ function MoviesCardList({
 			setWindowWidth(window.innerWidth);
 		};
 
-		if (location.pathname === '/movies') {
+		if (moviesLocation) {
 			if (windowWidth <= breakPoint_480) {
 				setDisplayedMovies(showingMovies_5);
 				setMoviesToLoad(addMovies_2);
@@ -59,9 +61,19 @@ function MoviesCardList({
 		return () => {
 			window.removeEventListener('resize', handleWindowResize);
 		};
-	}, [windowWidth, location]);
+	}, [windowWidth, moviesLocation]);
 
-	const moviesLocation = location.pathname === '/movies';
+	useEffect(() => {
+		if (moviesLocation) {
+			moviesFilter.slice(0, displayedMovies);
+			if (moviesFilter.length <= displayedMovies) {
+				setMoreBtn(false);
+			} else {
+				setMoreBtn(true);
+			}
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [moviesFilter, displayedMovies])
 
 	const showMoreMovies = () => {
 		setDisplayedMovies((movies) => movies + moviesToLoad);
@@ -90,13 +102,16 @@ function MoviesCardList({
 						}
 						)}
 					</article>
-					<button
-						type="button"
-						className="movies-cards__button"
-						onClick={showMoreMovies}
-					>
-						Ещё
-					</button>
+					{(moreBtn && moviesLocation)
+						&& (
+							<button
+								type="button"
+								className="movies-cards__button"
+								onClick={showMoreMovies}
+							>
+								Ещё
+							</button>
+						)}
 				</>
 			) : (
 				<>
