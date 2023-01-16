@@ -170,12 +170,6 @@ function App() {
 		}
 	};
 
-	//
-	useEffect(() => {
-		if (loggedIn) {
-
-		}
-	})
 	function handleCheckToken() {
 		if (token) {
 			mainApi.checkTokenValidity(token)

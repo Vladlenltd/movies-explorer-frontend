@@ -2,12 +2,13 @@
 import { useContext, useState, useEffect } from 'react';
 import Header from '../Header/Header';
 import { CurrentUserContext } from '../Context/CurrentUserContext';
-import { ValidationForms } from '../ValidationForms/ValidationForms'
+import { ValidationForms } from '../ValidationForms/ValidationForms';
 
 // eslint-disable-next-line react/prop-types
 function Profile({ handleUpdateUser, logOut }) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [isDataChange, setIsDataChange] = useState(false);
     const [isButtonActive, setIsButtonActive] = useState(false);
     const currentUser = useContext(CurrentUserContext);
     const { handleChange, errors, isValid } = ValidationForms();
@@ -40,6 +41,7 @@ function Profile({ handleUpdateUser, logOut }) {
 
     function handleSubmit() {
         handleUpdateUser(name, email);
+        setIsDataChange(true);
     }
 
     return (
@@ -83,6 +85,7 @@ function Profile({ handleUpdateUser, logOut }) {
                     </div>
                 </form>
                 <div className="profile__wrapper">
+                    {isDataChange ? <span className="sign-form__error"><p className="sign-form__submit-text">Данные успешно изменены</p></span> : ''}
                     <button
                         type="submit"
                         className="profile__btn profile__submit-btn"

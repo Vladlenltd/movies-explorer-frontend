@@ -66,6 +66,14 @@
     color: #ee3465;
     }
 
+    .sign-form__submit-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: green
+    }
+
 .sign-form__error-text_hidden {
         display: none;
     }
