@@ -16,7 +16,6 @@ function SavedMovies({
 	onCheckbox,
 	checked,
 	checkedSaveMovies,
-	allSavedMovies,
 	isLoading,
 }) {
 	return (
@@ -40,7 +39,6 @@ function SavedMovies({
 					savedMovies={savedMovies}
 					onSave={onSave}
 					onDelete={onDelete}
-					allSavedMovies={allSavedMovies}
 				/>
 			</main>
 			<Footer />

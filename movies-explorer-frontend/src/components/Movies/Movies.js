@@ -16,7 +16,6 @@ function Movies({
 	onCheckbox,
 	checked,
 	checkedSaveMovies,
-	allSavedMovies,
 	isLoading,
 }) {
 	return (
@@ -42,7 +41,6 @@ function Movies({
 					onCheckbox={onCheckbox}
 					checked={checked}
 					checkedSaveMovies={checkedSaveMovies}
-					allSavedMovies={allSavedMovies}
 				/>
 			</main>
 			<Footer />

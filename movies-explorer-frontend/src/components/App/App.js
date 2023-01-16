@@ -20,13 +20,10 @@ function App() {
 	const token = localStorage.getItem('jwt');
 	const [movies, setMovies] = useState([]);
 	const [savedMovies, setSavedMovies] = useState([]);
-	const [isFailed, setIsFailed] = useState(false);
 	const [currentUser, setCurrentUser] = useState({});
 	const [checked, setChecked] = useState(true);
 	const [checkedSaveMovies, setCheckedSaveMovies] = useState(true);
 	const [isLoading, setIsLoading] = useState(false);
-	const [allSavedMovies, setAllSavedMovies] = useState([]);
-	const [isNotFound, setIsNotFound] = useState(false);
 
 	useEffect(() => {
 		handleCheckToken()
@@ -111,14 +108,12 @@ function App() {
 					const searchArr = searchMovies(
 						JSON.parse(localStorage.getItem('allMovies')), name);
 					setMovies(searchArr);
-					setIsNotFound(!movies.length && !isFailed);
 					localStorage.setItem('filteredMovies', JSON.stringify(searchArr));
 					localStorage.setItem('searchKeyword', name);
 					localStorage.setItem('checkbox', checked);
 					setTimeout(() => setIsLoading(false), 1000);
 				})
 				.catch((err) => {
-					setIsFailed(true);
 					console.log(err);
 				});
 		} else if (JSON.parse(localStorage.getItem('allMovies'))) {
@@ -128,7 +123,6 @@ function App() {
 				name
 			);
 			setMovies(searchArr);
-			setIsNotFound(!movies.length || !isFailed);
 			localStorage.setItem('filteredMovies', JSON.stringify(searchArr));
 			localStorage.setItem('searchKeyword', name);
 			localStorage.setItem('checkbox', checked);
@@ -141,21 +135,17 @@ function App() {
 		setIsLoading(true);
 		mainApi
 			.getMovies()
+
 			.then((movies) => {
-				setAllSavedMovies(movies);
-				localStorage.setItem('checkboxSaveMovies', checkedSaveMovies);
 				const userSavedMovies = movies.filter((movie) => {
 					return movie.owner === currentUser._id;
 				});
 				const searchArr = searchMovies(userSavedMovies, name);
 				setSavedMovies(searchArr);
-				setIsNotFound(!searchArr.length && !isFailed);
 				setTimeout(() => setIsLoading(false), 1000);
+				localStorage.setItem('checkboxSaveMovies', checkedSaveMovies);
 			})
 			.catch((err) => console.log(err));
-		const searchArr = searchMovies(allSavedMovies, name);
-		setSavedMovies(searchArr);
-		setIsNotFound(!searchArr.length || !isFailed);
 		setTimeout(() => setIsLoading(false), 1000);
 	};
 
@@ -228,7 +218,7 @@ function App() {
 		setLoggedIn(false);
 		setMovies([]);
 		setSavedMovies([]);
-		setAllSavedMovies([]);
+		// setAllSavedMovies([]);
 		setChecked(true);
 		setCheckedSaveMovies(true);
 		setCurrentUser({});
@@ -249,8 +239,6 @@ function App() {
 								<Movies
 									onSubmit={handleSearchMovies}
 									movies={movies}
-									isFailed={isFailed}
-									isNotFound={isNotFound}
 									checkedSaveMovies={checkedSaveMovies}
 									savedMovies={savedMovies}
 									searchKeyword={localStorage.getItem('searchKeyword')}
@@ -258,7 +246,6 @@ function App() {
 									onCheckbox={handleChangeCheckbox}
 									onSave={handleSaveMovie}
 									onDelete={handleDeleteMovie}
-									allSavedMovies={allSavedMovies}
 									isLoading={isLoading}
 								/>
 							</PrivateRoute>
@@ -271,8 +258,6 @@ function App() {
 								<SavedMovies
 									onSubmit={handleSearchSavedMovies}
 									movies={movies}
-									isFailed={isFailed}
-									isNotFound={isNotFound}
 									checkedSaveMovies={checkedSaveMovies}
 									savedMovies={savedMovies}
 									searchKeyword={localStorage.getItem('searchKeyword')}
@@ -280,7 +265,6 @@ function App() {
 									onCheckbox={handleChangeCheckbox}
 									onSave={handleSaveMovie}
 									onDelete={handleDeleteMovie}
-									allSavedMovies={allSavedMovies}
 									isLoading={isLoading}
 								/>
 							</PrivateRoute>
